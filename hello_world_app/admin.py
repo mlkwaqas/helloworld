@@ -1,3 +1,10 @@
 from django.contrib import admin
+from hello_world_app.models import Name
 
-# Register your models here.
+
+class NameAdmin(admin.ModelAdmin):
+    model = Name
+    list_display = ('value', 'created_at', )
+    search_fields = ('value',)
+
+admin.site.register(Name, NameAdmin)

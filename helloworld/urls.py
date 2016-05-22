@@ -15,10 +15,12 @@ Including another URLconf
 """
 from django.conf.urls import url, include
 from django.contrib import admin
+from rest_framework.authtoken import views
 from hello_world_app.views import NameCreationView, NameShowView
 
 urlpatterns = [
     url(r'^api/', include('api.urls')),
+    url(r'^api-token-auth/', views.obtain_auth_token),
     url(r'^admin/', admin.site.urls),
     url(r'^$', NameCreationView.as_view(), name='create_name'),
     url(r'^name/(?P<name_id>\d+)/$', NameShowView.as_view(), name='show_name')

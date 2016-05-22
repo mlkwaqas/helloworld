@@ -3,7 +3,6 @@ from hello_world_app.models import Name
 
 
 class NameAdmin(admin.ModelAdmin):
-    model = Name
     list_display = ('value', 'created_at', )
     search_fields = ('value',)
 

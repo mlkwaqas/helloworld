@@ -19,3 +19,6 @@ codekit-config.json
 .AppleDouble
 :2e_*
 :2e#
+
+### ignore sqllite files
+*.sqlite3

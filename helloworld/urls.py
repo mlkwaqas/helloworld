@@ -15,7 +15,10 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
+from hello_world_app.views import NameCreationView, NameShowView
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
+    url(r'^$', NameCreationView.as_view(), name='create_name'),
+    url(r'^name/(?P<name_id>\d+)/$', NameShowView.as_view(), name='show_name')
 ]
